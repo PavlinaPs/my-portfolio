@@ -1,0 +1,158 @@
+/*** custom variables ***/
+:root {
+    --bg-pink: beige;
+}
+
+.dark-mode {
+    --bg-pink: #222;
+}
+
+
+/*** reset ***/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*** set-up ***/
+html {
+    font-size: 62.5%;  /* 10px = 1 rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-pink);
+}
+
+img {
+    max-width: 100%;
+}
+
+img:not([hidden]) {
+    display: block;
+}
+
+button {
+    font: inherit;
+    border: none;
+}
+/*** end-of-set-up ***/
+
+
+/*** accessibility ***/
+
+/* animations, transitions, smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+/* theme toggle */
+.theme-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    width: 40px;
+    height: 40px;
+
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    transition: all 0.1s ease-in-out;
+
+    cursor: pointer;
+}
+
+.theme-button > i {
+    font-size: 1.6rem;
+    color: rgb(75, 73, 75);
+    pointer-events: none;
+}
+
+.theme-button:active {
+    transform: translateY(-5%);
+}
+
+/* for screen readers only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;  /*added line*/
+    border: 0;
+}
+
+/* tab index ??? */
+/*** end-of-accessibility ***/
+
+
+
+/***  ***/
+
+
+/*** footer ***/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #333;
+    box-shadow: 10px 0px 10px rgba(0,0,0,0.5);
+    /* background-image: url(./images/P4110044landscape.JPG);
+    background-position: center;
+    background-blend-mode: multiply; */
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    height: 5rem;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.social-list__link {
+    color: beige;
+    font-size: 2.5rem;
+}
+
+.social-list__link > img {
+    width: 80%;
+    height: 80%;
+}
+
+.social-list__item {
+    transform: scale(1);
+    transition: transform 0.2s ease-in;
+}
+
+.social-list__item:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in;
+}
+/*** end-of-footer ***/

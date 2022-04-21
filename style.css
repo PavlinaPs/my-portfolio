@@ -2,6 +2,7 @@
 :root {
     --clr-Frontend-Mentor: rgb(128, 0, 128);
     --clr-My-Joke-Collection: rgb(44, 73, 127);
+    --clr-JS-Retro-Games: #2e3548;
 
     --clr-bs1: rgb(197, 197, 197);
 
@@ -179,6 +180,11 @@ section {
     color: var(--clr-My-Joke-Collection);
 }
 
+.projects__JavaScriptRetroGames .projects__sub-title {
+    color: var(--clr-JS-Retro-Games);
+}
+
+
 .projects__figure {
     position: relative;
     overflow: hidden;
@@ -217,6 +223,10 @@ section {
     color: var(--clr-My-Joke-Collection);
 }
 
+.projects__JavaScriptRetroGames .projects__overlay {
+    color: var(--clr-JS-Retro-Games);
+}
+
 .projects__figure:hover > .projects__overlay,
 .projects__figure:focus > .projects__overlay {
     transform: translateX(0);
@@ -238,6 +248,11 @@ section {
 .projects__MyJokeCollection .projects__link {
     color: var(--clr-My-Joke-Collection);
     border-bottom: 2px solid var(--clr-My-Joke-Collection);
+}
+
+.projects__JavaScriptRetroGames .projects__link {
+    color: var(--clr-JS-Retro-Games);
+    border-bottom: 2px solid var(--clr-JS-Retro-Games);
 }
 
 .projects__languages {

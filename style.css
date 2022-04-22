@@ -364,6 +364,78 @@ section {
 
 /*** end of Frontend Mentor Challenges ***/
 
+/*** JavaScript Retro Games ***/
+
+.jsrg__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    /*originally 100em*/
+    max-width: 110rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    padding: 2rem;
+}
+
+.jsrg__item {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 5px 5px 20px var(--clr-bs1);
+}
+
+.jsrg__item--img-holder {
+    box-shadow: 1px 4px 2px -2px var(--clr-bs1);
+}
+
+.jsrg__item--description {
+    padding: 1rem 2rem;
+}
+
+.jsrg__item--text-holder {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.jsrg__link--tutorial:hover,
+.jsrg__link--tutorial:focus {
+    border-bottom: 1px solid black;
+}
+
+.jsrg__link--tutorial > span {
+    font-size: var(--fs-small);
+}
+
+.jsrg__languages {
+    font-size: var(--fs-small);
+}
+
+.jsrg__link--github > i {
+    font-size: var(--fs-h2);
+    color: var(--clr-JS-Retro-Games);
+    transition: transform 250ms linear;
+}
+
+.jsrg__link--github > i:hover,
+.jsrg__link--github > i:focus {
+    transform: scale(1.1);
+    transition: transform 150ms linear;
+}
+
+.jsrg__link--live {
+    height: 1.75rem;
+    align-self: flex-end;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+}
+
+.jsrg__link--live:hover,
+.jsrg__link--live:focus {
+    border-bottom: 1px solid black;
+}
+
+
+/*** JavaScript Retro Games ***/
 
 
 /*** footer ***/

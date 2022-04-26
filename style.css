@@ -62,6 +62,10 @@ button {
     border: none;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -94,7 +98,7 @@ a {
     align-items: center;
 
     position: fixed;
-    top: 3%;
+    bottom: 3%;
     right: 3%;
     width: 40px;
     height: 40px;
@@ -130,9 +134,68 @@ a {
     white-space: nowrap;  /*added line*/
     border: 0;
 }
-
 /* tab index ??? */
 /*** end-of-accessibility ***/
+
+/*** navigation ***/
+
+.nav--desktop {
+    position: fixed;
+    width: 95vw;
+    max-width: 100rem;
+    top: 0;
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    outline: 1px solid purple; 
+}
+
+.nav__list--desktop {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-bold);
+    color: #176095;
+    text-transform: uppercase;  
+ 
+}
+
+.nav__item--desktop {
+    /* width: 9rem; */
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    /* background-color: #d3e4d1; */
+    pointer-events:all;
+}
+
+/* .nav__item--desktop:first-child {
+    background-color: #dfb96d;
+}
+
+.nav__item--desktop:nth-child(2) {
+    background-color: #d68160;
+}
+
+.nav__item--desktop:nth-child(3) {
+    background-color: #d3e4d1;
+}
+
+.nav__item--desktop:last-child {
+    background-color: #176095;
+} */
+
+.nav__link--desktop {
+    display: block;
+    
+}
+
+
+/*** end-of-navigation ***/
 
 section {
     /* max-width: 100em; */

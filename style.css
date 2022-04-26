@@ -11,7 +11,8 @@
 
     --ff-main: 'Dosis', sans-serif;
 
-    --fs-h1: 3rem;
+    --fs-h1-home: 3rem;
+    --fs-h1: 2.5rem;
     --fs-h2: 2rem;
     --fs-normal: 1.5rem;
     --fs-small: 1.2rem;
@@ -135,12 +136,12 @@ a {
 
 section {
     /* max-width: 100em; */
-    margin: 0 auto;
-    
+    margin: 0rem auto;
+    min-height: 100vh;
 }
 
 .title {
-    margin: 0 auto;
+    margin: 3rem auto;
     font-size: var(--fs-h1);
     text-align: center;
 }
@@ -152,10 +153,112 @@ section {
     text-align: center;
     
 }
+/*** home ***/
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* to account for the footer */
+    padding-bottom: 5rem;
+}
 
+.home__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.home__title {
+    font-size: var(--fs-h1-home);
+    text-align: center; 
+    color: #d68160;
+}
 
-/***  ***/
+.home__title--text {
+    margin-top: 0.5rem;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    color: #696969;
+    text-align: center;
+}
+
+.home__line {
+    width: 120%;
+    margin-top: 1rem;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #e65027, #d68160, #e5a228, #dfb96d);
+}
+
+.img-pavlina {
+    width: 25rem;
+    aspect-ratio: 1/1;
+    margin-top: 2rem;
+    border-bottom-left-radius: 5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 
+        0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+.img-pavlina-id {
+    width: 25rem;
+    margin-top: 1.5rem;
+    box-shadow: 
+        0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 45em) {
+    .home__container {
+        display: block;
+        position: relative;
+        height: 43rem;
+        width: 100rem;
+        padding: 0 2rem;
+    }
+
+    .home__title {
+        position: absolute;
+        top: 12rem;
+        left: 45rem;
+        text-align: left;
+    }
+
+    .home__title--text {
+        position: absolute;
+        top: 16rem;
+        left: 45rem;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .home__line {
+        position: absolute;
+        top: 19.5rem;
+        left: 8rem;
+        max-width: 92rem;
+        margin-top: 1rem;
+    }
+
+    .img-pavlina {
+        position: absolute;
+        top: 0rem;
+        left: 15rem;
+        margin-top: 0;
+    }
+
+    .img-pavlina-id {
+        position: absolute;
+        top: 25.5rem;
+        left: 15rem;
+    }
+
+}
+
+/*** end of home ***/
 
 /*** projects ***/
 
@@ -166,8 +269,7 @@ section {
     max-width: 100rem;
     margin: 0 auto;
     margin-bottom: 5rem;
-    padding: 2rem;
-    overflow: hidden;
+    padding: 0 2rem;
     /* outline: 1px solid yellowgreen; */
 }
 
@@ -433,10 +535,30 @@ section {
 .jsrg__link--live:focus {
     border-bottom: 1px solid black;
 }
+/*** end of JavaScript Retro Games ***/
+
+/*** about ***/
+.about__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;    
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.about__item {
+    padding: 1rem 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 5px 5px 20px var(--clr-bs1);
+}
 
 
-/*** JavaScript Retro Games ***/
+/*** end of about ***/
 
+/***  ***/
+
+/***  ***/
 
 /*** footer ***/
 footer {

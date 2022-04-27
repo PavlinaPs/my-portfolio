@@ -11,10 +11,10 @@
     --bg: rgb(247, 247, 240);
     --bg-projects-overlay: rgba(248, 250, 250, 0.9); 
     /* colors about */
-    --clr-about-red: hsl(16, 100%, 95%);
-    --clr-about-orange: hsl(38, 100%, 96%);
-    --clr-about-blue: hsl(195, 33%, 95%);
-    --clr-about-green: hsl(104, 49%, 92%);
+    --clr-red: hsl(17, 59%, 61%);
+    --clr-orange: hsl(40, 64%, 65%);
+    --clr-blue: hsl(205, 73%, 34%);
+    --clr-green: hsl(114, 28%, 74%);
 
     --ff-main: 'Dosis', sans-serif;
 
@@ -218,6 +218,8 @@ a {
         justify-content: flex-end;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 
     .nav__item--desktop {
@@ -226,10 +228,12 @@ a {
     
     .nav__item--desktop:first-child {
         border-bottom-left-radius: 1rem;
+        border-top-left-radius: 0;
     }
     
     .nav__item--desktop:last-child {
         border-bottom-right-radius: 1rem;
+        border-top-right-radius: 0;
     }
 }
 
@@ -655,27 +659,25 @@ section {
 
 .about__item {
     padding: 1rem 2rem;
-    color: var(--clr-mid-gray);
-    
     border-top-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    box-shadow: 5px 5px 20px var(--clr-bs1);
+    border-bottom-right-radius: 2rem;  
 }
 
-.about__item:nth-of-type(4n + 1){
-    background-color: var(--clr-about-red);
+.about__item:nth-of-type(4n + 1) {
+    box-shadow: 5px 5px 15px hsla(    17, 59%, 61%, 0.3);
 }
 
-.about__item:nth-of-type(4n + 2){
-    background-color: var(--clr-about-orange);
+.about__item:nth-of-type(4n + 2) {
+    box-shadow: 5px 5px 15px hsla(40, 64%, 65%, 0.4);
 }
 
-.about__item:nth-of-type(4n + 3){
-    background-color: var(--clr-about-blue);
+.about__item:nth-of-type(4n + 3) {
+    box-shadow: 5px 5px 15px hsla(205, 73%, 34%, 0.2);
 }
 
-.about__item:nth-of-type(4n + 4){
-    background-color: var(--clr-about-green);
+.about__item:nth-of-type(4n + 4) {
+    box-shadow: 5px 5px 15px hsla(114, 28%, 74%, 0.6);
+
 }
 
 .about__item > h2 {
@@ -687,55 +689,65 @@ section {
     line-height: 1.5;
 }
 
+.about__item:nth-of-type(4n + 1) > h2 {
+    color: var(--clr-red);
+}
+
+.about__item:nth-of-type(4n + 2) > h2 {
+    color: var(--clr-orange);
+}
+
+.about__item:nth-of-type(4n + 3) > h2 {
+    color: var(--clr-blue);
+}
+
+.about__item:nth-of-type(4n + 4) > h2 {
+    color: var(--clr-green);
+}
 /*** end of about ***/
 
 
 /*** contact ***/
-
-/*** end of contact ***/
-
-
-/*** footer ***/
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
-    background-color: #333;
-    box-shadow: 10px 0px 10px rgba(0,0,0,0.5);
-    /* background-image: url(./images/P4110044landscape.JPG);
-    background-position: center;
-    background-blend-mode: multiply; */
+.contact__container {  
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .social-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    width: 100%;
-    height: 5rem;
-    list-style-type: none;
-    text-decoration: none;
+    gap: 4rem;
+    margin-top: 4rem;
+    padding: 1rem 4rem;
+    font-size: 3.3rem;
+    color: white;
+    background-color: var(--clr-mid-gray);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;  
+    box-shadow: 5px 5px 5px var(--clr-bs1);
 }
 
-.social-list__link {
-    color: beige;
-    font-size: 2.5rem;
+.funny__container {  
+    max-width: 50rem;
+    margin: 10rem auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
 }
 
-.social-list__link > img {
-    width: 80%;
-    height: 80%;
+.funny__title {
+    font-size: var(--fw-regular);
 }
 
-.social-list__item {
-    transform: scale(1);
-    transition: transform 0.2s ease-in;
+.funny__quote {
+    font-style: italic;
+    margin-bottom: 0.75rem;
 }
-
-.social-list__item:hover {
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in;
-}
-/*** end-of-footer ***/
+    
+/*** end of contact ***/

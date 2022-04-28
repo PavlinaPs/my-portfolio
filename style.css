@@ -21,11 +21,14 @@
     --fs-h1-home: 3rem;
     --fs-h1: 2.5rem;
     --fs-h2: 2rem;
+    --fs-section-text: 1.65rem;
     --fs-normal: 1.5rem;
     --fs-small: 1.2rem;
 
     --fw-bold: 600;
     --fw-regular: 500;
+
+    --desktop: 52em;
 }
 
 .dark-mode {
@@ -54,6 +57,7 @@ body {
     background-color: var(--bg);
     font-family: var(--ff-main);
     font-size: var(--fs-normal);
+    overflow-x: hidden;
 }
 
 img {
@@ -99,34 +103,49 @@ a {
   }
 
 /* theme toggle */
-.theme-button {
+.theme__container {
+    display: flex;
+    justify-content: flex-end;
+
+    position: fixed;
+    width: 95vw;
+    max-width: 100rem;
+    top: 3%;
+    left: 50%;
+    padding: 5px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.theme__button {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: fixed;
-    bottom: 3%;
-    right: 3%;
-    width: 40px;
-    height: 40px;
-    z-index: 100;
+    width: 30px;
+    height: 30px;
 
-    background-color: white;
     border-radius: 50%;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     transition: all 0.1s ease-in-out;
-
     cursor: pointer;
 }
 
-.theme-button > i {
+.theme__button > i {
     font-size: 1.6rem;
     color: rgb(75, 73, 75);
     pointer-events: none;
 }
 
-.theme-button:active {
+.theme__button:active {
     transform: translateY(-5%);
+}
+
+@media (min-width: 50em) {
+    .theme__container {
+        top: auto;
+        bottom: 3%;
+    }
 }
 
 /* for screen readers only */
@@ -208,7 +227,7 @@ a {
     transition: 0.3s;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
     .nav--desktop {
         top: 0;
         bottom: auto;
@@ -246,15 +265,17 @@ section {
 }
 
 .title {
-    margin: 3rem auto;
+    margin: 3rem auto 1rem;
     padding-top: 1.5rem;
     font-size: var(--fs-h1);
+    color: var(--clr-mid-gray);
     text-align: center;
 }
 
 .section__text {
     margin: 1rem 0;
     width: 100%;
+    font-size: var(--fs-section-text);
     line-height: 1.5;
     text-align: center;
 }
@@ -318,7 +339,7 @@ section {
         0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
     .home {
         padding-bottom: 0;
     }
@@ -378,19 +399,19 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 100rem;
-    margin: 0 auto;
-    margin-bottom: 5rem;
+    margin: 1.75rem auto 5rem;
     padding: 0rem 2rem;
-    /* outline: 1px solid yellowgreen; */
 }
 
 .projects__item {
     padding: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     box-shadow: 5px 5px 20px var(--clr-bs1);
 }
 
 .projects__sub-title {
-    margin: 2rem 0;
+    margin-bottom: 1.5rem;
     font-size: var(--fs-h2);
     font-weight: var(--fw-bold);
     text-align: left;
@@ -460,7 +481,6 @@ section {
 .projects__link {
     align-self: flex-start;
     margin-top: 3rem;
-    font-size: var(--fs-small);
     font-weight: var(--fw-bold);
 }
 
@@ -504,19 +524,20 @@ section {
     /*originally 100em*/
     max-width: 110rem;
     margin: 0 auto;
-    margin-bottom: 5rem;
-    padding: 2rem;
+    padding: 2rem 2rem 6rem;
+    color: #696969;
 }
 
 .fem__item {
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 2rem;
-    box-shadow: 5px 5px 20px var(--clr-bs1);
+    box-shadow: 5px 5px 15px var(--clr-bs1);
 }
 
 .fem__item--img-holder {
     overflow: hidden;
     border-top-left-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
 .fem__img {
@@ -553,7 +574,7 @@ section {
 
 .fem__link--github > i {
     font-size: var(--fs-h2);
-    color: var(--clr-JS-Retro-Games);
+    color: #696969;
     transition: transform 250ms linear;
 }
 
@@ -572,7 +593,7 @@ section {
 
 .fem__link--live:hover,
 .fem__link--live:focus {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #696969;
 }
 
 /*** end of Frontend Mentor Challenges ***/
@@ -585,9 +606,9 @@ section {
     gap: 2rem;
     /*originally 100em*/
     max-width: 110rem;
-    margin: 0 auto;
-    margin-bottom: 5rem;
+    margin: 0 auto 5rem;
     padding: 2rem;
+    color: #696969;
 }
 
 .jsrg__item {
@@ -625,7 +646,6 @@ section {
 
 .jsrg__link--github > i {
     font-size: var(--fs-h2);
-    color: var(--clr-JS-Retro-Games);
     transition: transform 250ms linear;
 }
 
@@ -644,7 +664,7 @@ section {
 
 .jsrg__link--live:hover,
 .jsrg__link--live:focus {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #696969;
 }
 /*** end of JavaScript Retro Games ***/
 
@@ -654,7 +674,8 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;    
     max-width: 100rem;
-    margin: 0 auto;
+    margin: 1.75rem auto 5rem;
+    padding: 0rem 2rem;
 }
 
 .about__item {
@@ -720,7 +741,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    margin-top: 4rem;
+    margin: 4rem 0 7rem;
     padding: 1rem 4rem;
     font-size: 3.3rem;
     color: white;
@@ -730,24 +751,50 @@ section {
     box-shadow: 5px 5px 5px var(--clr-bs1);
 }
 
+.social-list__link > i {
+    transform: scale(1);
+    transition: transform 150ms linear;
+}
+
+.social-list__link > i:hover,
+.social-list__link > i:focus {
+    transform: scale(1.1);
+    transition: transform 150ms linear;
+}
+
+.social-list__link > img {
+    transform: scale(1);
+    transition: transform 150ms linear;
+}
+
+.social-list__link > img:hover,
+.social-list__link > img:focus {
+    transform: scale(1.1);
+    transition: transform 150ms linear;
+}
+
 .funny__container {  
-    max-width: 50rem;
-    margin: 10rem auto 0;
+    max-width: 55ch;
+    margin: 0 auto;
+    padding-bottom: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
     text-align: center;
+}
+
+.funny__item {
+    margin-bottom: 2rem;
 }
 
 .funny__title {
     font-size: var(--fw-regular);
+    margin-bottom: 1rem;
 }
 
 .funny__quote {
-    font-style: italic;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
     
 /*** end of contact ***/

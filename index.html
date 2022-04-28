@@ -20,7 +20,7 @@
     <title>Pavlina's Portfolio</title>
 </head>
 
-<body>
+<body id="index">
     <!-- theme toggle -->
     <div class="theme__container">
         <button class="theme__button" aria-label="theme toggle">
@@ -28,17 +28,17 @@
         </button>
     </div>
 
-    <nav class="nav--desktop">
-        <ul class="nav__list--desktop">
-            <li class="nav__item--desktop"><a href="#home" class="nav__link--desktop">Home</a></li>
-            <li class="nav__item--desktop"><a href="#projects" class="nav__link--desktop">Projects</a></li>
-            <li class="nav__item--desktop"><a href="#about" class="nav__link--desktop">About</a></li>
-            <li class="nav__item--desktop"><a href="#contact" class="nav__link--desktop">Contact</a></li>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-
+        <!-- home -->
         <section class="home" id="home">
             <div class="home__container">
                 <h1 class="home__title">Welcome to my portfolio</h1>
@@ -50,6 +50,7 @@
             </div>
         </section>
 
+        <!-- projects -->
         <section class="projects" id="projects">
             <h1 class="title">My Projects</h1>
             <p class="section__text">This is what I've accomplished so far.<br>Projects are divided by type. </p>
@@ -99,6 +100,7 @@
             </div>
         </section>
 
+        <!-- about -->
         <section class="about" id="about">
             <h1 class="title">About me</h1>
             <p class="section__text">Hello, I am Pavlina. Here is more information about me.<br>I appreciate your time that you are spending meeting me.</p>
@@ -167,33 +169,34 @@
             </div>
         </section>
 
+        <!-- contact -->
         <section class="contact" id="contact">
             <h1 class="title">Contact</h1>
             <p class="section__text">Let's work together. Here is where you can find me.<br>I always do my best!</p>
             <div class="contact__container">
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a href="mailto:pavlina.psarsky@gmail.com" class="social-list__link" target="_blank">
+                        <a href="mailto:pavlina.psarsky@gmail.com" class="social-list__link" target="_blank" aria-label="email">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="https://www.linkedin.com/in/pavlina-psarsky/" class="social-list__link" target="_blank">
+                        <a href="https://www.linkedin.com/in/pavlina-psarsky/" class="social-list__link" target="_blank" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="https://www.frontendmentor.io/profile/PavlinaPs" class="social-list__link" target="_blank">
+                        <a href="https://www.frontendmentor.io/profile/PavlinaPs" class="social-list__link" target="_blank" aria-label="Frontend Mentor">
                             <img ckass="social__list--fem-img" src="./images/frontend-mentor-favicon-32x32.png" alt="Frontend Mentor icon">
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="https://github.com/PavlinaPs" class="social-list__link" target="_blank">
+                        <a href="https://github.com/PavlinaPs" class="social-list__link" target="_blank" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="https://www.freecodecamp.org/pavlina1" class="social-list__link" target="_blank">
+                        <a href="https://www.freecodecamp.org/pavlina1" class="social-list__link" target="_blank" aria-label="freeCodeCamp">
                             <i class="fa-brands fa-free-code-camp"></i>
                         </a>
                     </li>
@@ -227,10 +230,7 @@
             </aside> 
         </section>
 
-
     </main>
-
-    <!-- social add accessibility!!!!-->
     
     <script src="./index.js"></script>
 </body>

@@ -1,20 +1,35 @@
 /*** custom variables ***/
 :root {
-    /* colors projects */
-    --clr-Frontend-Mentor: hsl(300, 100%, 25%);
-    --clr-My-Joke-Collection: hsl(219, 49%, 34%);
-    --clr-JS-Retro-Games: hsl(224, 22%, 23%);
+    /** colors **/
+    --clr-main: hsl(0, 0%, 41%);
 
-    --clr-mid-gray: hsl(0, 0%, 41%);
-    --clr-bs1: rgb(197, 197, 197);
+        /* colors background */
+    --bg: hsl(60, 30%, 95%);
+    --bg-projects-overlay: hsla(180, 23%, 97%, 0.9);
+    --bg-navbar: hsla(60, 30%, 95%, 0.8);
 
-    --bg: rgb(247, 247, 240);
-    --bg-projects-overlay: rgba(248, 250, 250, 0.9); 
-    /* colors about */
+        /* colors projects */
+    --clr-fem: hsl(300, 100%, 25%);
+    --clr-mjc: hsl(219, 49%, 34%);
+    --clr-jsrg: hsl(224, 22%, 23%);
+ 
+        /* colors about */
     --clr-red: hsl(17, 59%, 61%);
     --clr-orange: hsl(40, 64%, 65%);
     --clr-blue: hsl(205, 73%, 34%);
     --clr-green: hsl(114, 28%, 74%);
+
+        /* colors box shadows */
+    --clr-bs1: rgb(197, 197, 197);
+    --clr-bs2: hsla(0, 0%, 0%, 0.25);
+    --clr-bs3: hsla(0, 0%, 0%, 0.15);
+    --clr-bs4: hsla(0, 0%, 0%, 0.05);
+    --clr-bs-red: hsla(17, 59%, 61%, 0.3);
+    --clr-bs-orange: hsla(40, 64%, 65%, 0.4);
+    --clr-bs-blue: hsla(205, 73%, 34%, 0.2);
+    --clr-bs-green: hsla(114, 28%, 74%, 0.6);
+
+
 
     --ff-main: 'Dosis', sans-serif;
 
@@ -35,7 +50,6 @@
     --bg: #222;
 }
 
-
 /*** reset ***/
 *,
 *::before,
@@ -44,45 +58,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/*** set-up ***/
-html {
-    font-size: 62.5%;  /* 10px = 1 rem */
-    scroll-behavior: smooth;
-}
-
-body {
-    position: relative;
-    background-color: var(--bg);
-    font-family: var(--ff-main);
-    font-size: var(--fs-normal);
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-img:not([hidden]) {
-    display: block;
-}
-
-button {
-    font: inherit;
-    border: none;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-/*** end-of-set-up ***/
-
 
 /*** accessibility ***/
 
@@ -133,7 +108,7 @@ a {
 
 .theme__button > i {
     font-size: 1.6rem;
-    color: rgb(75, 73, 75);
+    color: var(--clr-main);
     pointer-events: none;
 }
 
@@ -163,6 +138,45 @@ a {
 /* tab index ??? */
 /*** end-of-accessibility ***/
 
+/*** set-up ***/
+html {
+    font-size: 62.5%;  /* 10px = 1 rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    background-color: var(--bg);
+    font-family: var(--ff-main);
+    font-size: var(--fs-normal);
+    color: var(--clr-main);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+img:not([hidden]) {
+    display: block;
+}
+
+button {
+    font: inherit;
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/*** end-of-set-up ***/
+
+
 /*** navigation ***/
 .nav--desktop {
     position: fixed;
@@ -180,7 +194,7 @@ a {
     justify-content: center;
     align-items: center;
     font-weight: var(--fw-bold);
-    color: #176095;
+    color: var(--clr-blue);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
@@ -200,7 +214,7 @@ a {
 
 @supports (backdrop-filter: blur(1.5rem)) {
     .nav__item--desktop {
-        background: rgba(247, 247, 240, 0.8);
+        background: var(--bg-navbar);
         backdrop-filter: blur(1.5rem);
     }
 }
@@ -216,9 +230,9 @@ a {
     height: 0.2rem;
     top: 1rem;
     left: 1rem;
-    background-color: #176095;
+    background-color: var(--clr-blue);
     transform: scaleX(0);
-    transition: 0.3s;
+    transition: 300ms;
 }
 
 .nav__link--desktop:hover::after,
@@ -268,7 +282,7 @@ section {
     margin: 3rem auto 1rem;
     padding-top: 1.5rem;
     font-size: var(--fs-h1);
-    color: var(--clr-mid-gray);
+    color: var(--clr-main);
     text-align: center;
 }
 
@@ -286,8 +300,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* to account for the footer */
-    /* padding-bottom: 5rem; */
     padding-bottom: 2rem;
 }
 
@@ -301,14 +313,13 @@ section {
 .home__title {
     font-size: var(--fs-h1-home);
     text-align: center; 
-    color: #d68160;
+    color: var(--clr-red);
 }
 
 .home__title--text {
     margin-top: 0.5rem;
     font-size: var(--fs-h2);
-    font-weight: var(--fw-bold);
-    color: var(--clr-mid-gray);
+    font-weight: var(--fw-bold);;
     text-align: center;
 }
 
@@ -317,7 +328,7 @@ section {
     margin-top: 1rem;
     border: 1px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #e65027, #d68160, #e5a228, #dfb96d);
+    border-image-source: linear-gradient(to right, hsl(13, 79%, 53%), var(--clr-red), hsl(39, 78%, 53%), var(--clr-orange));
 }
 
 .img-pavlina {
@@ -327,16 +338,16 @@ section {
     border-bottom-left-radius: 5rem;
     border-top-right-radius: 1.5rem;
     box-shadow: 
-        0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
-        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+        0.25em 0.25em 0.75em var(--clr-bs2),
+        0.125em 0.125em 0.25em var(--clr-bs3);
 }
 
 .img-pavlina-id {
     width: 25rem;
     margin-top: 1.5rem;
     box-shadow: 
-        0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
-        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+        0.25em 0.25em 0.75em var(--clr-bs2),
+        0.125em 0.125em 0.25em var(--clr-bs3);
 }
 
 @media (min-width: 50em) {
@@ -418,22 +429,21 @@ section {
 }
 
 .projects__FrontendMentor .projects__sub-title {
-    color: var(--clr-Frontend-Mentor);
+    color: var(--clr-fem);
 }
 
 .projects__MyJokeCollection .projects__sub-title {
-    color: var(--clr-My-Joke-Collection);
+    color: var(--clr-mjc);
 }
 
 .projects__JavaScriptRetroGames .projects__sub-title {
-    color: var(--clr-JS-Retro-Games);
+    color: var(--clr-jsrg);
 }
 
 
 .projects__figure {
     position: relative;
     overflow: hidden;
-    /* outline: 1px solid purple; */
 }
 
 .projects__overlay {
@@ -451,7 +461,7 @@ section {
    
     font-size: var(--fs-normal);
     font-weight: var(--fw-regular);
-    color: var(--clr-Frontend-Mentor);
+    color: var(--clr-fem);
     line-height: 1.6;
     text-align: left;
 
@@ -461,15 +471,15 @@ section {
 }
 
 .projects__FrontendMentor .projects__overlay {
-    color: var(--clr-Frontend-Mentor);
+    color: var(--clr-fem);
 }
 
 .projects__MyJokeCollection .projects__overlay {
-    color: var(--clr-My-Joke-Collection);
+    color: var(--clr-mjc);
 }
 
 .projects__JavaScriptRetroGames .projects__overlay {
-    color: var(--clr-JS-Retro-Games);
+    color: var(--clr-jsrg);
 }
 
 .projects__figure:hover > .projects__overlay,
@@ -485,18 +495,18 @@ section {
 }
 
 .projects__FrontendMentor .projects__link {
-    color: var(--clr-Frontend-Mentor);
-    border-bottom: 2px solid var(--clr-Frontend-Mentor);
+    color: var(--clr-fem);
+    border-bottom: 2px solid var(--clr-fem);
 }
 
 .projects__MyJokeCollection .projects__link {
-    color: var(--clr-My-Joke-Collection);
-    border-bottom: 2px solid var(--clr-My-Joke-Collection);
+    color: var(--clr-mjc);
+    border-bottom: 2px solid var(--clr-mjc);
 }
 
 .projects__JavaScriptRetroGames .projects__link {
-    color: var(--clr-JS-Retro-Games);
-    border-bottom: 2px solid var(--clr-JS-Retro-Games);
+    color: var(--clr-jsrg);
+    border-bottom: 2px solid var(--clr-jsrg);
 }
 
 .projects__languages {
@@ -525,7 +535,6 @@ section {
     max-width: 110rem;
     margin: 0 auto;
     padding: 2rem 2rem 6rem;
-    color: #696969;
 }
 
 .fem__item {
@@ -537,7 +546,7 @@ section {
 .fem__item--img-holder {
     overflow: hidden;
     border-top-left-radius: 1rem;
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0.5rem var(--clr-bs4);
 }
 
 .fem__img {
@@ -574,7 +583,6 @@ section {
 
 .fem__link--github > i {
     font-size: var(--fs-h2);
-    color: #696969;
     transition: transform 250ms linear;
 }
 
@@ -593,7 +601,7 @@ section {
 
 .fem__link--live:hover,
 .fem__link--live:focus {
-    border-bottom: 1px solid #696969;
+    border-bottom: 1px solid var(--clr-main);
 }
 
 /*** end of Frontend Mentor Challenges ***/
@@ -608,7 +616,6 @@ section {
     max-width: 110rem;
     margin: 0 auto 5rem;
     padding: 2rem;
-    color: #696969;
 }
 
 .jsrg__item {
@@ -633,7 +640,7 @@ section {
 
 .jsrg__link--tutorial:hover,
 .jsrg__link--tutorial:focus {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--clr-main);
 }
 
 .jsrg__link--tutorial > span {
@@ -664,7 +671,7 @@ section {
 
 .jsrg__link--live:hover,
 .jsrg__link--live:focus {
-    border-bottom: 1px solid #696969;
+    border-bottom: 1px solid var(--clr-main);
 }
 /*** end of JavaScript Retro Games ***/
 
@@ -685,20 +692,19 @@ section {
 }
 
 .about__item:nth-of-type(4n + 1) {
-    box-shadow: 5px 5px 15px hsla(    17, 59%, 61%, 0.3);
+    box-shadow: 5px 5px 15px var(--clr-bs-red);
 }
 
 .about__item:nth-of-type(4n + 2) {
-    box-shadow: 5px 5px 15px hsla(40, 64%, 65%, 0.4);
+    box-shadow: 5px 5px 15px var(--clr-bs-orange);
 }
 
 .about__item:nth-of-type(4n + 3) {
-    box-shadow: 5px 5px 15px hsla(205, 73%, 34%, 0.2);
+    box-shadow: 5px 5px 15px var(--clr-bs-blue);
 }
 
 .about__item:nth-of-type(4n + 4) {
-    box-shadow: 5px 5px 15px hsla(114, 28%, 74%, 0.6);
-
+    box-shadow: 5px 5px 15px var(--clr-bs-green);
 }
 
 .about__item > h2 {
@@ -744,8 +750,8 @@ section {
     margin: 4rem 0 7rem;
     padding: 1rem 4rem;
     font-size: 3.3rem;
-    color: white;
-    background-color: var(--clr-mid-gray);
+    color: var(--bg);
+    background-color: var(--clr-main);
     border-top-left-radius: 2rem;
     border-bottom-right-radius: 2rem;  
     box-shadow: 5px 5px 5px var(--clr-bs1);
